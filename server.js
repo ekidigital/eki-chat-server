@@ -32,6 +32,10 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/chat", chatRoutes);
 
+app.get("/", (req, res) => {
+  return res.status(200).json({ status: "success", message: "Api working" });
+})
+
 // User socket mapping for call functionalities
 const connectedUsers = new Map(); // Global map to track connected users
 
